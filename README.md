@@ -5,7 +5,8 @@ This project is a sample app to use @ngrx
 
 ## Development server
 Configure the file configs.json under environments/
-```json{
+```json
+{
     "apiKey": "YOUR_KEY",
     "authDomain": "YOUR_AUTH_DOMAIN",
     "databaseURL": "YOUR_DATABASE_URL",
@@ -14,4 +15,5 @@ Configure the file configs.json under environments/
     "messagingSenderId": "YOUR_MESSAGING_SENDER_ID",
     "appId": "YOUR_APP_ID"
 }```
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4100/`.
