@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This project is a sample app to use @ngrx
 
 ## Development server
-Configure the file configs.json under environments/
+Configure firebase under environments/environments.ts
 ```json
 {
     "apiKey": "YOUR_KEY",
@@ -14,6 +14,6 @@ Configure the file configs.json under environments/
     "storageBucket": "YOUR_STORAGE_BUCKET",
     "messagingSenderId": "YOUR_MESSAGING_SENDER_ID",
     "appId": "YOUR_APP_ID"
-}```
-
+}
+```
 Run `ng serve` for a dev server. Navigate to `http://localhost:4100/`.
