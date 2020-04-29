@@ -1,0 +1,22 @@
+<div class="home">
+    <h1>A sample app using @ngrx for state management</h1>
+    <div class="counter">
+        Counter: {{ count$ |async }}
+    </div>
+    <div class="buttons">
+        <button (click)="incrementHandler();">Increment counter</button>
+        <button (click)="decrementHandler();">Decrement counter</button>
+    </div>
+    <div class="log-actions">
+        <h2>Log of actions</h2>
+        <ng-template ngFor let-item [ngForOf]="log$ | async" let-i="index">
+            <h2>
+                <span [ngStyle]="{color: item.name === 'Increment' ? 'green' : 'red'}">{{item.name}}</span>
+                <br />
+                <span style="color: grey;">Previous State: {{item.previousState}} </span>
+                
+            </h2>
+        </ng-template>
+    </div>
+    
+</div>
