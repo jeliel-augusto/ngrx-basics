@@ -5,7 +5,6 @@ import { counterFeatureKey, counterReducer } from './store/counter.reducers';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [CounterComponent],
   imports: [
@@ -13,6 +12,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     StoreModule.forFeature(counterFeatureKey, counterReducer)
   ],
+  providers: [],
   exports: [
     CounterComponent
   ]

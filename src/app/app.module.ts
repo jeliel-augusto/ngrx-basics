@@ -6,8 +6,12 @@ import { AuthenticationRoutingModule } from './authentication/authentication-rou
 import { CounterFeatureModule } from './counter-feature/counter-feature.module';
 import { CounterRoutingModule } from './counter-feature/counter-routing.module';
 import { RouterModule } from '@angular/router';
+import { environment } from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
 import { FormsModule } from '@angular/forms';
-
+import { AuthenticationModule } from './authentication/authentication.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database'
 
 @NgModule({
   declarations: [
@@ -16,10 +20,13 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AuthenticationRoutingModule,
+    AuthenticationModule,
     CounterRoutingModule,
     RouterModule.forRoot([]),
     CounterFeatureModule,
-    
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
     StoreModule.forRoot({})
   ],
   providers: [],

@@ -10,3 +10,6 @@ export const decrementAction = createAction(
 export const resetAction = createAction(
     '[Counter Feature] Reset'
 )
+export const saveAction = createAction(
+    '[Counter Feature] Save'
+)
