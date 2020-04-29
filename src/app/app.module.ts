@@ -1,10 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
+import { AppComponent } from './app.component';
+import { AuthenticationRoutingModule } from './authentication/authentication-routing.module';
 import { CounterFeatureModule } from './counter-feature/counter-feature.module';
+import { CounterRoutingModule } from './counter-feature/counter-routing.module';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -12,8 +15,11 @@ import { CounterFeatureModule } from './counter-feature/counter-feature.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AuthenticationRoutingModule,
+    CounterRoutingModule,
+    RouterModule.forRoot([]),
     CounterFeatureModule,
+    
     StoreModule.forRoot({})
   ],
   providers: [],

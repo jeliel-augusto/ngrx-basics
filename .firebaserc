@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngrx-exemplo": {
+      "hosting": {
+        "ngrx": [
+          "ngrx-exemplo"
+        ]
+      }
+    }
+  }
+}

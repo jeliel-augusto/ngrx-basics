@@ -4,6 +4,7 @@
         Counter: {{ count$ |async }}
     </div>
     <div class="buttons">
+        <button [routerLink]="['/sign-up']">Sign-Up</button>
         <button (click)="incrementHandler();">Increment counter</button>
         <button (click)="decrementHandler();">Decrement counter</button>
     </div>

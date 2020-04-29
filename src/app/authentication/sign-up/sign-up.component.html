@@ -1,0 +1,12 @@
+<div class="sign-up">
+    <form (submit)="submit($event);">
+        <h2>Sign-up for recover your previous state</h2>
+        <div class="form-input">
+            <input type="email" placeholder="Email" [(ngModel)]="email">
+        </div>        
+        <div class="form-input">
+            <input type="password" placeholder="Password" [(ngModel)]="password">
+        </div>
+        <button>Sign-up</button> 
+    </form>
+</div>
