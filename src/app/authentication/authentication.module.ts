@@ -5,6 +5,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireAuthModule } from '@angular/fire/auth'
 import { SignInComponent } from './sign-in/sign-in.component';
+import {EffectsModule} from "@ngrx/effects";
+import {AuthenticationEffects} from "./store/effects/authentication.effects";
 
 @NgModule({
   declarations: [SignUpComponent, SignInComponent],
@@ -12,6 +14,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     CommonModule,
     BrowserModule,
     FormsModule,
+    EffectsModule.forFeature([AuthenticationEffects])
   ],
   exports: [
   ]

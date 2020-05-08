@@ -8,18 +8,26 @@
             <button (click)="saveState();">Save your state</button>
             <button (click)="logout();">Sign out</button>
         </div>
-        
+
         <ng-template #loading>
             <div class="loading" *ngIf="(autenticated$ | async) == undefined; else notAuthenticated">
                 <span>Loading auth status...</span>
             </div>
             <ng-template #notAuthenticated>
-                <button [routerLink]="['/sign-up']">Sign-Up for save state</button>
-                <button [routerLink]="['/sign-in']">Sign-In for recover state</button>
+                <button [routerLink]="['/sign-up']">Sign-Up</button>
+                <button [routerLink]="['/sign-in']">Sign-In</button>
             </ng-template>
         </ng-template>
         <button (click)="incrementHandler();">Increment counter</button>
         <button (click)="decrementHandler();">Decrement counter</button>
+    </div>
+    <div class="feedback-messages">
+      <div class="success" *ngIf="(saveSuccess$ | async)">
+        <h2>Save successful!</h2>
+      </div>
+      <div class="failure" *ngIf="(saveFailure$ | async) as failure">
+        <h2>Save failure! {{failure.error}} </h2>
+      </div>
     </div>
     <div class="log-actions">
         <h2>Log of actions</h2>
@@ -28,9 +36,9 @@
                 <span [ngStyle]="{color: item.name === 'Increment' ? 'green' : 'red'}">{{item.name}}</span>
                 <br />
                 <span style="color: grey;">Previous State: {{item.previousState}} </span>
-                
+
             </h2>
         </ng-template>
     </div>
-    
+
 </div>

@@ -24,3 +24,15 @@
     font-size: 2rem;
     margin: 10px;
 }
+.success{
+  background-color: rgba(0,100,0, 100);
+  color: white;
+  padding: 0.5rem;
+  margin: 10px;
+}
+.failure{
+  background-color: rgba(100, 0, 0, 100);
+  color: white;
+  padding: 0.5rem;
+  margin: 10px;
+}

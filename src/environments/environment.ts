@@ -5,7 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    
+    apiKey: "AIzaSyAQdOLqP1FGfV5Rk3vTeQCtu35er2AC-n8",
+    authDomain: "ngrx-exemplo.firebaseapp.com",
+    databaseURL: "https://ngrx-exemplo.firebaseio.com",
+    projectId: "ngrx-exemplo",
+    storageBucket: "ngrx-exemplo.appspot.com",
+    messagingSenderId: "185219303624",
+    appId: "1:185219303624:web:b08b2b3d2f272ef29f7dfd"
   }
 };
 

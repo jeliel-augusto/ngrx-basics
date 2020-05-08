@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { incrementAction, decrementAction, resetAction } from './counter.actions';
+import {incrementAction, decrementAction, resetAction, saveAction, setState} from './counter.actions';
 
 export interface ActionLog{
     name: string,
@@ -16,22 +16,22 @@ const initialState: CounterState = {
 const _counterReducer = createReducer(
     initialState,
     on(incrementAction, (state: CounterState)=>(
-        { 
-            counter: state.counter + 1, 
+        {
+            counter: state.counter + 1,
             log: [
               ...state.log,
-                {   name: 'Increment', 
+                {   name: 'Increment',
                     previousState: `Counter: ${state.counter}`
                 }
             ]
         }
     )),
     on(decrementAction, (state: CounterState)=>(
-        { 
-            counter: state.counter - 1, 
+        {
+            counter: state.counter - 1,
             log: [
               ...state.log,
-                {   name: 'Decrement', 
+                {   name: 'Decrement',
                     previousState: `Counter: ${state.counter}`
                 }
             ]
@@ -40,11 +40,18 @@ const _counterReducer = createReducer(
     on(resetAction, (state: CounterState)=>({counter: 0,
         log: [
             ...state.log,
-              {   name: 'Decrement', 
+              {   name: 'Decrement',
                   previousState: `Counter: ${state.counter}`
               }
         ]
-    }))
+    })),
+    on(setState, (state, action) =>{
+        const newState = {
+          counter: action.counter,
+          log: action.log || []
+        }
+        return newState;
+    })
 )
 export function counterReducer(state, action){
     return _counterReducer(state, action);

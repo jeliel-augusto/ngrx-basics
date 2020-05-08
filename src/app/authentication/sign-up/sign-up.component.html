@@ -3,10 +3,15 @@
         <h2>Sign-up for recover your previous state</h2>
         <div class="form-input">
             <input type="email" placeholder="Email" [(ngModel)]="email" name="email">
-        </div>        
+        </div>
         <div class="form-input">
             <input type="password" placeholder="Password" [(ngModel)]="password" name="password">
         </div>
-        <button>Sign-up</button> 
+        <h5 *ngIf="authenticationEffects.loading">Loading...</h5>
+        <div *ngIf="(signUpFailure$ | async) as failure">
+          <h3>{{failure.error}}</h3>
+        </div>
+      <button>Sign-up</button>
+
     </form>
 </div>
